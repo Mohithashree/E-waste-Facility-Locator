@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELocate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <style>
+    .navbar-custom {
+        background-color: #f6fcf6;
+        padding: 10px 30px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+       position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-weight: bold;
+        color: #28a745; /* Green color */
+    }
+    .navbar-custom .nav-link {
+        color: #000;
+        margin-right: 20px;
+        margin-left: 30px;
+    }
+
+    .navbar-custom .nav-link:hover {
+        
+        color: #28a745;
+    }
+
+    .navbar-custom .loading-text {
+        color: #28a745;
+        margin-right: 20px;
+    }
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+    .navbar-custom .signin-btn {
+        background-color: transparent;
+        border: 1px solid #28a745;
+        color: #28a745;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .navbar-custom .signin-btn:hover {
+        background-color: #28a745;
+        color: #fff;
+    }
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .footer {
+        background-color: #f6fcf6;
+        padding: 20px 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        margin-top: 10%;
+    }
+    
+    .footer h6 {
+        font-weight: bold;
+    }
+    .footer a {
+        color: #000;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    .social-icons i {
+        font-size: 20px;
+        margin: 0 10px;
+        color: #000;
+    }
+    .social-icons i:hover {
+        color: #007bff;
+    }
+    .nav-item{
+        margin-right: 4px;
+       
+    }
+    .footer .logo{
+        font-weight: bold;
+        color: #28a745;
+    }
+    
+    .footer a {
+        text-decoration: none; /* Remove underline */
+        transition: color 0.3s ease; /* Smooth transition */
+    }
+    
+    .footer a:hover {
+        color: #20ff07; /* Color when hovered */
+        text-decoration:solid; /* Add underline on hover */
+    }
+    .social-icons a:hover {
+        color: #20ff07; /* Color when hovered */
+        text-decoration: solid;
+    }
+    button {
+            width: 100px;
+            padding: 14px;
+            background-color: #2e7d32; /* Dark green button */
+            border: none;
+            color: white;
+            border-radius: 10px; /* Rounded edges for buttons */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif; /* Roboto for buttons */
+            font-weight: 300;
+        }
+
+        button:hover {
+            background-color:#28af60; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+
+        button:hover:after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .one{
+            margin-top: 10%;
+            margin-left: 30%;
+            
+        }
+        .one p{
+            border-radius: 1px;
+            background-color: white;
+            color: black;
+            margin-right: 40%;
+            padding: 20px;
+        }
+        .one p:hover{
+            background-color: #9ae192;
+            cursor: pointer;
+        }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-custom">
+                <div class="container-fluid">
+                    <!-- Brand Logo -->
+                    <a class="navbar-brand" href="#">ELocate</a>
+                    <!-- Navbar Links -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">E-Facilities</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="recycle.html">Recycle</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="education.html">Education</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="rules.html">Rules</a>
+                            </li>
+                        </ul>
+                        <!-- Loading Text and Sign-in Button -->
+                        <span class="navbar-text loading-text">🗺️Loading...</span>
+                      <!--  <button class="signin-btn">SIGNIN</button>-->
+                        <a href="sign in.html"><button type="submit">Sign In</button></a>
+                    </div>
+                </div>
+            </nav>
+           </header>
+          <section class="one">
+            <h1>Rules and Regulation</h1>
+            <p>
+                <b>A business which manufactures electrical and electronic items should follow the rules mentioned below:</b><br>
+
+                1.The company should ensure that the concentration of the following chemicals is within limits specified below:
+                2.The chemicals lead, mercury, hexavalent chromium, polybrominated biphenyls and polybrominated diphenyl ethers can be added up to 0.1% of the total weight of the product.<br>3.The chemical cadmium can be added up to 0.01% of the total weight of the product.<br>
+                4.The company should make arrangements to collect electrical and electronic items which have reached the end of their useful life. These items should be obtained from the consumers and transported to the warehouse of the dismantler or recycler. The company should ensure that no damage is caused to the environment on account of moving such items.
+<br>5.A symbol should be affixed to indicate that the product should not be discarded along with the regular waste. The symbol may be prominently placed on the product or in the user manual.</p>
+          </section>
+           <footer class="footer">
+            <div class="container1" >
+                <div class="row">
+                    <!-- Services -->
+                    <div class="col-sm">
+                        <h4><a class="logo" href="#"  style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">ELocate</a></h4>
+                        <br>
+                        <p style="font-size-adjust: initial;">ELocate:Transforming E-Waste Management.Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.</p>
+                        <input type="email" class="small-email-input" placeholder="Enter your email" > <br><br>
+                        <button class="btn btn-success">Subscribe</button>
+                    </div>
+                    <div class="col-sm">
+                        <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Our Services</h6>
+                        <br>
+                        <ul class="list-unstyled">
+                            <li><a href="recycle.html">Smartphone Recycle</a></li>
+                            <br>
+                            <li><a href="recycle.html">Laptop Recycle</a></li>
+                            <br>
+                            <li><a href="recycle.html">Accessories Recycle</a></li>
+                            <br>
+                            <li><a href="recycle.html">Television Recycle</a></li>
+                            <br>
+                            <li><a href="recycle.html">Refrigerator Recycle</a></li>
+                            <br>
+                            <li><a href="recycle.html">Washing Machine Recycle</a></li>
+                            <br>
+                        </ul>
+                    </div>
+                    <!-- Company -->
+                    <div class="col-sm">
+                        <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Company</h6>
+                        <br>
+                        <ul class="list-unstyled">
+                            <li><a href="about.html">About Us</a></li>
+                            <br>
+                            <li><a href="education.html">Education</a></li>
+                            <br>
+                            <li><a href="facility.html">E-Waste Facilities</a></li>
+                            <br>
+                            <li><a href="rules.html">Latest News</a></li>
+                            <br>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <br>
+                            <li><a href="home.html">Our Blog</a></li>
+                            <br>
+                        </ul>
+                    </div>
+                    <!-- Contact Us -->
+                    <div class="col-sm">
+    
+                        <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Contact Us</h6>
+                       <br>
+                        <p>Chh.Sambhajinagar, Maharashtra, 431001</p>
+                        <br>
+                        <p>Phone: +911234567890</p>
+                        <br>
+                        <p>Email: <a href="mailto:contact@elocate.com">contact@elocate.com</a></p>
+                        <br>
+                        <div class="social-icons">
+                            <a href="https://www.whatsapp.com" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://www.twitter.com" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://www.instagram.com" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center py-3">
+                &copy; 2024 ELocate | All Rights Reserved by <a href="#">Spam Byte</a>
+            </div>
+        <!-- Bootstrap JS and Dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <!-- Icons -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian E-Waste Management Rules</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    .content-container {
+      margin-top: 50px;
+    }
+    h1 {
+      color: #3cb371;
+      font-weight: bold;
+    }
+    .chapter-title {
+      font-weight: bold;
+    }
+    .navbar-custom {
+        background-color: #f6fcf6;
+        padding: 10px 30px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+       position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .navbar-custom .navbar-brand {
+        font-weight: bold;
+        color: #28a745; /* Green color */
+    }
+    .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+    .navbar-custom .nav-link {
+        color: #000;
+        margin-right: 20px;
+        margin-left: 30px;
+    }
+
+    .navbar-custom .nav-link:hover {
+        
+        color: #28a745;
+    }
+
+    .navbar-custom .loading-text {
+        color: #28a745;
+        margin-right: 20px;
+    }
+
+    .navbar-custom .signin-btn {
+        background-color: transparent;
+        border: 1px solid #28a745;
+        color: #28a745;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .navbar-custom .signin-btn:hover {
+        background-color: #28a745;
+        color: #fff;
+    }
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .footer {
+        background-color: #f6fcf6;
+        padding: 20px 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        
+    }
+    
+    .footer h6 {
+        font-weight: bold;
+    }
+    .footer a {
+        color: #000;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    .social-icons i {
+        font-size: 20px;
+        margin: 0 10px;
+        color: #000;
+    }
+    .social-icons i:hover {
+        color: #007bff;
+    }
+    .nav-item{
+        margin-right: 4px;
+       
+    }
+    .footer .logo{
+        font-weight: bold;
+        color: #28a745;
+    }
+    
+    .footer a {
+        text-decoration: none; /* Remove underline */
+        transition: color 0.3s ease; /* Smooth transition */
+    }
+    
+    .footer a:hover {
+        color: #20ff07; /* Color when hovered */
+        text-decoration:solid; /* Add underline on hover */
+    }
+    .social-icons a:hover {
+        color: #20ff07; /* Color when hovered */
+        text-decoration: solid;
+    }
+    button {
+            width: 100px;
+            padding: 14px;
+            background-color: #2e7d32; /* Dark green button */
+            border: none;
+            color: white;
+            border-radius: 10px; /* Rounded edges for buttons */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif; /* Roboto for buttons */
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color:#28af60; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+
+        button:hover:after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="#">ELocate</a>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">E-Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recycle.html">Recycle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="education.html">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rules.html">Rules</a>
+                    </li>
+                </ul>
+                <!-- Loading Text and Sign-in Button -->
+                <span class="navbar-text loading-text">🗺️Loading...</span>
+              <!--  <button class="signin-btn">SIGNIN</button>-->
+                <a href="sign in.html"><button type="submit">Sign In</button></a>
+            </div>
+        </div>
+    </nav>
+   </header>
+   <br><br><br>
+  <div class="container content-container">
+    <h1>Latest Indian E-Waste Management Rules</h1>
+    <p><strong>Ministry of Environment, Forest and Climate Change</strong><br>(EP Division)</p>
+    <p><strong>Dated the 16th March, 2022</strong></p>
+    <p><strong>S.O. 1047(E)</strong></p>
+
+    <h4><strong>Subject:</strong> The E-Waste (Management) Rules, 2022</h4>
+    <p>In exercise of the powers conferred by section 6, 8 and 25 of the Environment (Protection) Act, 1986 (29 of 1986), the Central Government hereby makes the following rules, namely:</p>
+
+    <h5 class="chapter-title">CHAPTER I</h5>
+    <h6>Preliminary</h6>
+
+    <h6>1. Short title and commencement.</h6>
+    <p>
+      (1) These rules may be called the E-Waste (Management) Rules, 2022.<br>
+      (2) They shall come into force on the date of their publication in the Official Gazette.
+    </p>
+
+    <h6>2. Definitions.</h6>
+    <p>In these rules, unless the context otherwise requires,–</p>
+    <ul>
+      <li><strong>(a) "Act"</strong> means the Environment (Protection) Act, 1986 (29 of 1986);</li>
+      <li><strong>(b) "Appliance"</strong> means any electrical or electronic equipment that is designed for household use;</li>
+      <li><strong>(c) "Authorized dismantler"</strong> means a person or entity authorized by the State Pollution Control Board to dismantle or disassemble e-waste;</li>
+    </ul>
+
+    <h5 class="chapter-title">CHAPTER II</h5>
+    <!-- You can add more content for Chapter II similarly -->
+  </div>
+  <div class="container content-container">
+    <h6>Responsibility of Producers</h6>
+
+    <h6>3. Extended producer responsibility.</h6>
+    <p>(1) Every producer shall be responsible for establishing a system to collect, refurbish, recycle or dispose of e-waste generated from his products in an environmentally sound manner.</p>
+
+    <h6>4. Collection of E-Waste from Consumers.</h6>
+    <p>(1) Producers shall set up collection centers for the return of end-of-life electronic products from consumers.<br>
+    (2) Producers shall provide information to consumers about the location of collection centers and the procedures to return end-of-life like electronic products.
+    </p>
+
+    <h6>5. Recycling Targets.</h6>
+    <p>(1) Producers shall achieve the recycling targets specified in Schedule II of these rules.<br>
+    (2) Producers failing to meet the recycling targets shall pay a financial penalty as specified by the Central Pollution Control Board.
+    </p>
+
+    <h6>6. Labeling of Electronic Products.</h6>
+    <p>(1) Every electronic product shall be labeled with information about environmentally hazardous substances contained in the product and the safe disposal practices.<br>
+    (2) The Central Pollution Control Board shall prescribe the manner and form of labeling.
+    </p>
+
+    <h6>7. Annual Reporting.</h6>
+    <p>(1) Producers shall submit an annual report to the State Pollution Control Board regarding the collection and recycling of e-waste.<br>
+    (2) The format and details of the annual report shall be specified by the Central Pollution Control Board.
+    </p>
+
+    <h6>8. Transportation and Handling of E-Waste.</h6>
+    <p>(1) Producers and authorized dismantlers shall ensure safe and environmentally sound transportation and handling of e-waste.<br>
+    (2) The vehicles used for transportation shall comply with the guidelines provided by the Central Pollution Control Board.
+    </p>
+
+    <h6>9. Awareness Programs.</h6>
+    <p>(1) Producers shall organize and participate in awareness programs to educate consumers and the general public about the proper disposal of e-waste.<br>
+
+        (2) The programs shall highlight the environmental impact of improper e-waste disposal and promote responsible recycling practices.
+    </p>
+    <h6>10. Prohibition of Unauthorized Handling.</h6>
+    <p>(1) Unauthorized handling, including dismantling and recycling of e-waste, is strictly prohibited.<br>
+
+        (2) Violation of this rule may lead to legal consequences, including fines and penalties.
+    </p>
+    <h6>11. Collaboration with Authorized Treatment and Disposal Facilities.</h6>
+    <p>(1) Producers shall collaborate with authorized treatment and disposal facilities for the environmentally safe processing of e-waste.<br>
+        (2) The facilities must comply with the standards set by regulatory authorities.
+    </p>
+  </div>
+  <footer class="footer">
+    <div class="container1" >
+        <div class="row">
+            <!-- Services -->
+            <div class="col-sm">
+                <h4><a class="logo" href="#"  style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">ELocate</a></h4>
+                <br>
+                <p style="font-size-adjust: initial;">ELocate:Transforming E-Waste Management.Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.</p>
+                <input type="email" class="small-email-input" placeholder="Enter your email" > <br><br>
+                <button class="btn btn-success">Subscribe</button>
+            </div>
+            <div class="col-sm">
+                <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Our Services</h6>
+                <br>
+                <ul class="list-unstyled">
+                    <li><a href="recycle.html">Smartphone Recycle</a></li>
+                    <br>
+                    <li><a href="recycle.html">Laptop Recycle</a></li>
+                    <br>
+                    <li><a href="recycle.html">Accessories Recycle</a></li>
+                    <br>
+                    <li><a href="recycle.html">Television Recycle</a></li>
+                    <br>
+                    <li><a href="recycle.html">Refrigerator Recycle</a></li>
+                    <br>
+                    <li><a href="recycle.html">Washing Machine Recycle</a></li>
+                    <br>
+                </ul>
+            </div>
+            <!-- Company -->
+            <div class="col-sm">
+                <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Company</h6>
+                <br>
+                <ul class="list-unstyled">
+                    <li><a href="about.html">About Us</a></li>
+                    <br>
+                    <li><a href="education.html">Education</a></li>
+                    <br>
+                    <li><a href="facility.html">E-Waste Facilities</a></li>
+                    <br>
+                    <li><a href="rules.html">Latest News</a></li>
+                    <br>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <br>
+                    <li><a href="home.html">Our Blog</a></li>
+                    <br>
+                </ul>
+            </div>
+            <!-- Contact Us -->
+            <div class="col-sm">
+
+                <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Contact Us</h6>
+               <br>
+                <p>Chh.Sambhajinagar, Maharashtra, 431001</p>
+                <br>
+                <p>Phone: +911234567890</p>
+                <br>
+                <p>Email: <a href="mailto:contact@elocate.com">contact@elocate.com</a></p>
+                <br>
+                <div class="social-icons">
+                    <a href="https://www.whatsapp.com" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center py-3">
+        &copy; 2024 ELocate | All Rights Reserved by <a href="#">Spam Byte</a>
+    </div>
+<!-- Bootstrap JS and Dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<!-- Icons -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
+

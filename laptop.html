@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELocate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const model = {
+            "HP": ["Envy 13 (2021)", "Envy 15 (2021)", "Spectre x360"],
+            "Lenovo": ["ThinkPad X1 Carbon (Gen 9, 2021)", "ThinkPad X1 Yoga (Gen 6, 2021)", "Yoga 9i (2021)"],
+            "Dell": [" XPS 13 (9310, 2021)", "XPS 15 (9510, 2021)", "Alienware M15"]
+        };
+    
+        const prices = {
+            "Envy 13 (2021)": "$600",
+            "Envy 15 (2021)": "$500",
+            "Spectre x360": "$400",
+            "ThinkPad X1 Carbon (Gen 9, 2021)": "$550",
+            "ThinkPad X1 Yoga (Gen 6, 2021)": "$450",
+            "Yoga 9i (2021)": "$1200",
+            "XPS 13 (9310, 2021)": "$650",
+            "XPS 15 (9510, 2021)": "$500",
+            "Alienware M15": "$400"
+        };
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("brand").addEventListener("change", function () {
+                const brand = this.value;
+                const modelSelect = document.getElementById("model");
+                const recyclePrice = document.getElementById("recyclePrice");
+
+                modelSelect.innerHTML = '<option value="">Select Model</option>';
+                recyclePrice.value = '';
+
+                if (brand && model[brand]) {
+                    modelSelect.disabled = false;
+                    model[brand].forEach(modelName => {
+                        const option = document.createElement("option");
+                        option.value = modelName;
+                        option.textContent = modelName;
+                        modelSelect.appendChild(option);
+                    });
+                } else {
+                    modelSelect.disabled = true;
+                }
+            });
+
+            document.getElementById("model").addEventListener("change", function () {
+                const modelName = this.value;
+                const recyclePrice = document.getElementById("recyclePrice");
+
+                recyclePrice.value = modelName ? prices[modelName] : '';
+            });
+        });
+    </script>
+    <style>
+        .navbar-custom {
+            background-color: #f6fcf6;
+            padding: 10px 30px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .navbar-custom .navbar-brand {
+            font-weight: bold;
+            color: #28a745; /* Green color */
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 100px; /* Adjusted for fixed navbar */
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar-custom .nav-link {
+            color: #000;
+            margin-right: 20px;
+            margin-left: 30px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #28a745;
+        }
+
+        .navbar-custom .loading-text {
+            color: #28a745;
+            margin-right: 20px;
+        }
+
+        .navbar-custom .signin-btn {
+            background-color: transparent;
+            border: 1px solid #28a745;
+            color: #28a745;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .navbar-custom .signin-btn:hover {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .footer {
+            background-color: #f6fcf6;
+            padding: 20px 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .footer h6 {
+            font-weight: bold;
+        }
+        .footer a {
+            color: #000;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons i {
+            font-size: 20px;
+            margin: 0 10px;
+            color: #000;
+        }
+        .social-icons i:hover {
+            color: #007bff;
+        }
+        .footer .logo {
+            font-weight: bold;
+            color: #28a745;
+        }
+        button {
+            width: 100px;
+            padding: 14px;
+            background-color: #2e7d32; /* Dark green button */
+            border: none;
+            color: white;
+            border-radius: 10px; /* Rounded edges for buttons */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.2s;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif; /* Roboto for buttons */
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color:#28af60; /* Darker green on hover */
+            transform: scale(1.05);
+        }
+
+        button:after {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.3);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+
+        button:hover:after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ELocate</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="e-facility.html">E-Facilities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recycle.html">Recycle</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="education.html">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="rules.html">Rules</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text loading-text">🗺️Loading...</span>
+                    <a href="sign in.html"><button type="button" class="signin-btn">Sign In</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h2><strong>Laptop Recycling</strong></h2>
+        <form>
+            <div class="row mb-lg-3">
+                <div class="col lg-9">
+                    <label for="brand" class="form-label">Select Brand:</label>
+                    <select id="brand" class="form-select">
+                        <option selected>Select Brand</option>
+                        <option value="HP">HP</option>
+                        <option value="Lenovo">Lenovo</option>
+                        <option value="Dell">Dell</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="model" class="form-label">Select Model:</label>
+                    <select id="model" class="form-select" disabled>
+                        <option value="">Select Model</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="recyclePrice" class="form-label">Recycle Item Price</label>
+                <input type="text" class="form-control" id="recyclePrice" disabled>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="pickupDate" class="form-label">Pickup Date:</label>
+                    <input type="date" class="form-control" id="pickupDate" placeholder="dd-mm-yyyy">
+                </div>
+                <div class="col">
+                    <label for="pickupTime" class="form-label">Pickup Time:</label>
+                    <input type="time" class="form-control" id="pickupTime" placeholder="--:--">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" id="location" placeholder="Enter location">
+            </div>
+
+            <div class="mb-3">
+                <label for="facility" class="form-label">Select Facility:</label>
+                <select id="facility" class="form-select">
+                    <option selected>Select Facility</option>
+                    <option value="1">Facility A</option>
+                    <option value="2">Facility B</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone:</label>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            <br><br>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="container1" >
+            <div class="row">
+                <!-- Services -->
+                <div class="col-sm">
+                    <h4><a class="logo" href="#"  style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">ELocate</a></h4>
+                    <br>
+                    <p style="font-size-adjust: initial;">ELocate:Transforming E-Waste Management.Find E-waste facilities effortlessly with our platform. Your key to responsible recycling and sustainability.</p>
+                    <input type="email" class="small-email-input" placeholder="Enter your email" > <br><br>
+                    <button class="btn btn-success">Subscribe</button>
+                </div>
+                <div class="col-sm">
+                    <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Our Services</h6>
+                    <br>
+                    <ul class="list-unstyled">
+                        <li><a href="recycle.html">Smartphone Recycle</a></li>
+                        <br>
+                        <li><a href="recycle.html">Laptop Recycle</a></li>
+                        <br>
+                        <li><a href="recycle.html">Accessories Recycle</a></li>
+                        <br>
+                        <li><a href="recycle.html">Television Recycle</a></li>
+                        <br>
+                        <li><a href="recycle.html">Refrigerator Recycle</a></li>
+                        <br>
+                        <li><a href="recycle.html">Washing Machine Recycle</a></li>
+                        <br>
+                    </ul>
+                </div>
+                <!-- Company -->
+                <div class="col-sm">
+                    <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Company</h6>
+                    <br>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About Us</a></li>
+                        <br>
+                        <li><a href="education.html">Education</a></li>
+                        <br>
+                        <li><a href="facility.html">E-Waste Facilities</a></li>
+                        <br>
+                        <li><a href="rules.html">Latest News</a></li>
+                        <br>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <br>
+                        <li><a href="home.html">Our Blog</a></li>
+                        <br>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                <div class="col-sm">
+
+                    <h6 style="font-family: sans-serif; font-weight: bolder; font-size: 20px;">Contact Us</h6>
+                   <br>
+                    <p>Chh.Sambhajinagar, Maharashtra, 431001</p>
+                    <br>
+                    <p>Phone: +911234567890</p>
+                    <br>
+                    <p>Email: <a href="mailto:contact@elocate.com">contact@elocate.com</a></p>
+                    <br>
+                    <div class="social-icons">
+                        <a href="https://www.whatsapp.com" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.twitter.com" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-3">
+            &copy; 2024 ELocate | All Rights Reserved by <a href="#">Spam Byte</a>
+        </div>
+    <!-- Bootstrap JS and Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</footer>
+</body>
+</html>

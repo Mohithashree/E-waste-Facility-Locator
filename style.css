@@ -1,0 +1,62 @@
+.moving-banner {
+    position: relative;
+    width: 100%;
+    height: 50px; /* Adjust based on your layout */
+    overflow: hidden; /* To hide the movement outside the box */
+}
+
+/* Banner Text Styling */
+.banner-text {
+    position: absolute;
+    top: 50%; /* Start in the middle vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect center alignment */
+    color: #28a745;
+    width: 100%;
+    text-align: center;
+}
+
+.text-wrapper {
+    position: relative;
+}
+
+/* Styling for the individual names */
+.box {
+    font-size: large;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0; /* Start hidden */
+    position: absolute; /* Keep them aligned on the same line */
+    left: 50%; /* Center horizontally */
+    transform: translatey(-50%); /* Center horizontally */
+}
+
+/* Individual name animations */
+.b1 {
+    animation: ani1 15s infinite;
+}
+.b2 {
+    animation: ani2 15s infinite;
+}
+.b3 {
+    animation: ani3 15s infinite;
+}
+
+/* Keyframe Animations for fading text */
+@keyframes ani1 {
+    0% { opacity: 0; } /* Start hidden */
+    10% { opacity: 1; } /* Fade in */
+    20% { opacity: 0; } /* Fade out */
+}
+
+@keyframes ani2 {
+    30% { opacity: 0; } /* Start hidden */
+    40% { opacity: 1; } /* Fade in */
+    50% { opacity: 0; } /* Fade out */
+}
+
+@keyframes ani3 {
+    60% { opacity: 0; } /* Start hidden */
+    70% { opacity: 1; } /* Fade in */
+    80% { opacity: 0; } /* Fade out */
+}
